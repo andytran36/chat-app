@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  </head>
+  <body>
+    <div id="flex-container">
+      <div id="app-container">
+        <div id="banner">Chat Room</div>
+        <div id="messages-container">
+          <ul id="messages"></ul>
+        </div>
+        <form action="">
+          <input placeholder="Type a message..." id="m" autocomplete="off" /><button><b>Send</b></button>
+        </form>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./index.js"></script>
+      </div>
+      <div id="users-container">
+        <div id="users-header">Users</div>
+        <ul id="users"></ul>
+      </div>
+    </div>
+  </body>
+</html>
