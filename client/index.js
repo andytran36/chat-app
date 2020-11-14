@@ -20,10 +20,9 @@ $(function () {
     $('form').submit(function(e) {
         e.preventDefault();
 
-        // TODO: add /name and /color
         const message = $('#m').val();
 
-        // if 
+        // if there is no command, emit message
         if (!handleCommands(message))
             socket.emit('chat message', message);
         $('#m').val('');

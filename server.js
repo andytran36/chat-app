@@ -137,7 +137,6 @@ io.on('connection', (socket) => {
         io.emit("user list changed", "");
     });
 
-    // TODO: add disconnect do display users
     socket.on('disconnect', () => {
         if (userList === []) return false;
 
