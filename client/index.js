@@ -48,8 +48,11 @@ $(function () {
 
     socket.on('user list', function(user) {
         userList.push(user);
-        if (user.status !== "offline")
-            $('#users').append($('<li>').html(`<span style="color:${user.color}">` + user.username + "</span>"));
+        if (user.status !== "offline") {
+            if (user.socketid === socket.id)
+                $('#users').append($('<li>').html(`<span style="color:${user.color}">` + user.username + "</span> (me)"));
+            else $('#users').append($('<li>').html(`<span style="color:${user.color}">` + user.username + "</span>"));
+        }
     });
 
     socket.on("user list changed", function() {
